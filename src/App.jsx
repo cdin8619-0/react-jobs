@@ -1,20 +1,23 @@
 import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import HomeCard from "./components/HomeCard";
 
 const names = ['Chanuka', 'Dinuwan', 'Dinesh', 'Dilshan', 'Dulaj', 'Hiruni', 'Kavindu', 'Lakindu', 'Lahiru', 'Lahiru Dilshan', 'Lahiru Dilshan Perera', 'Lahiru Dilshan Perera Bandara'];
 
 const loggedIn = true;
 
+const styles = {
+  color: 'red',
+  fontSize: '24px'
+}
+
 const App = () => {
   return (
     <div>
-      <h1>Welcome to My React App</h1>
-      <ul>
-        {names.map((name, index) => (
-          <li key = {index}>{name}</li>
-        ))}
-      </ul>
-      { loggedIn ? <h1>Hello Member!</h1>: <h1>Hello Guest!</h1> }
-      { names.length > 5 && <h1>There are more than 5 members</h1>}
+      <Navbar />
+      <Hero title = 'This is the title' subtitle = 'This is the sub title'/>
+      <HomeCard />
     </div>
   );
 }
